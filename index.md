@@ -1,6 +1,6 @@
 ---
 layout: default
-title: main Page
+title: Main Page
 ---
 
 # This is a heading
