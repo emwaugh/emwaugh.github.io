@@ -21,3 +21,6 @@ first column | second column | third column
 :------------| :-----------: | -----------:
 left justified | centered | right justified
 new row | new day | the end
+
+My pages:
+- (Open GIScience)[open-giscience.md]
