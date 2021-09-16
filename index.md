@@ -15,3 +15,9 @@ if you want a new line.
 The course website is found [here](https://gis4dev.github.io).
 
 Here is some *italicized* text and some **bold text**.
+
+
+first column | second column | third column
+:------------| :-----------: | -----------:
+left justified | centered | right justified
+new row | new day | the end
