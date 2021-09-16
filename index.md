@@ -1,4 +1,9 @@
-# Heading
+---
+layout: default
+title: main Page
+---
+
+# This is a heading
 
 Leave blank lines between paragraphs, tables, lists, etc.
 Start sentences on new lines.
