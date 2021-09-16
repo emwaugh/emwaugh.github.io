@@ -30,3 +30,5 @@ new row | new day | the end
 ## Blog posts
 
 1. [Open GIScience](open-giscience.md)
+
+![GitHub Logo](assets/Octocat.png)
