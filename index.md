@@ -31,4 +31,4 @@ new row | new day | the end
 
 1. [Open GIScience](open-giscience.md)
 
-![GitHub Logo](assets/Octocat.png)
+[![GitHub Logo](assets/Octocat.png)](https://github.io)
