@@ -29,6 +29,6 @@ new row | new day | the end
 
 ## Blog posts
 
-1. [Reflections on GIS and Geography](open-giscience.md)
+1. [Reflections on GIS and Geography](reflections-gis-geography.md)
 
 [![GitHub Logo](assets/Octocat.png)](https://github.io)
