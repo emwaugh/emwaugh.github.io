@@ -1,6 +1,6 @@
 ---
 layout: page
-title: What is Open GIScience?
+title: Reflections on GIS and Geography
 ---
 
 September 20, 2021
