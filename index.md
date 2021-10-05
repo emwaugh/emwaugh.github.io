@@ -1,33 +1,12 @@
 ---
 layout: default
-title: Main Page
+title: Emma Waugh
 ---
 
-# This is a heading
-
-Leave blank lines between paragraphs, tables, lists, etc.
-Start sentences on new lines.
-They will render seamlessly into paragraphs.
-Add two blank spaces at the end of a sentence  
-if you want a new line.
-
-- bullet list first item
-- bullet list second item
-
-1. numbered list first item
-1. numbered list second item
-
-The course website is found [here](https://gis4dev.github.io).
-
-Here is some *italicized* text and some **bold text**.
+# My Work in Open Source GIScience
 
 
-first column | second column | third column
-:------------| :-----------: | -----------:
-left justified | centered | right justified
-new row | new day | the end
-
-## Blog posts
+## Reflections
 
 1. [Reflections on GIS and Geography](reflections-gis-geography.md)
 2. [Reproducibility & Replicability in Open Source GIS](reproducibility-replicability-osgis.md)
