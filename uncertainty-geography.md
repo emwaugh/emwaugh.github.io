@@ -2,6 +2,7 @@
 layout: page
 title: Uncertainty in Geography
 ---
+October 4, 2021
 
 In my GIS coursework and work experiences, I don't think I've learned much about uncertainty or how best to represent it in geography.
 When using geographic data, so many choices are made by researchers about how to structure their questions, where to obtain data, how to measure and
