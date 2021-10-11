@@ -7,12 +7,12 @@ title: Emma Waugh
 
 ## GIS
 
-1. [Urban Resilience in Dar es Salaam, Tanzania](dar-report/report.md)
+1. [Urban Resilience in Dar es Salaam, Tanzania](GIS/urban-resilience/report.md)
 
 ## Reflections
 
-1. [Reflections on GIS and Geography](reflections-gis-geography.md)
-2. [Reproducibility & Replicability in Open Source GIS](reproducibility-replicability-osgis.md)
-3. [Uncertainty in Geography](uncertainty-geography.md)
+1. [Reflections on GIS and Geography](reflections/reflections-gis-geography.md)
+2. [Reproducibility & Replicability in Open Source GIS](reflections/reproducibility-replicability-osgis.md)
+3. [Uncertainty in Geography](reflections/uncertainty-geography.md)
 
 [![GitHub Logo](assets/Octocat.png)](https://github.io)
