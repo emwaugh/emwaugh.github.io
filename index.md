@@ -5,6 +5,9 @@ title: Emma Waugh
 
 # My Work in Open Source GIScience
 
+## GIS
+
+1. [Urban Resilience in Dar es Salaam, Tanzania](dar-report/report.md)
 
 ## Reflections
 
