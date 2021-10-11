@@ -13,7 +13,7 @@ Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 
 ### Emma Waugh
 ### Open Source GIScience
-### October 2021
+### October 2021 
 
 ```sql
 /* PART (1) impervious surface density */
