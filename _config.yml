@@ -1,4 +1,4 @@
-remote_theme: poole/poole
+theme: jekyll-theme-minimal
 
 title: Open Source GIScience
 description: Emma Waugh's work in open source GIScience, Fall 2021
