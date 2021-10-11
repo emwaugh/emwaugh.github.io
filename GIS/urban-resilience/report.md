@@ -9,11 +9,11 @@ DROP TABLE
 Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 
 # Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
-### Data from the ResilienceAcademy (https://resilienceacademy.ac.tz/data/) and OpenStreetMap (https://www.openstreetmap.org/#map=12/-6.8162/39.2203)
+### Data from the [ResilienceAcademy](https://resilienceacademy.ac.tz/data/) and [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203)
 
 ### Emma Waugh
 ### Open Source GIScience
-### October 2021 
+### October 2021
 
 ```sql
 /* PART (1) impervious surface density */
