@@ -3,17 +3,17 @@ layout: page
 title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
 
-```sql
-DROP TABLE
-```
-Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 
 # Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ### Data from the [ResilienceAcademy](https://resilienceacademy.ac.tz/data/) and [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203)
 
 ### Emma Waugh
-### Open Source GIScience
-### October 2021
+#### Open Source GIScience
+#### October 2021
+
+Here's [my map](assets/):
+
+and, here's the code!
 
 ```sql
 /* PART (1) impervious surface density */
