@@ -24,9 +24,9 @@ This study is an analysis of impervious surface cover and waste site management 
 
 ### Data sources
 - [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203) is a global collaborative geographic database
-    - **planet_osm_roads** and **planet_osm_polygons** layers for impervious surface cover throughout Dar es Salaam (as of October 2021)
+    - ```**planet_osm_roads**``` and ```**planet_osm_polygons**``` layers for impervious surface cover throughout Dar es Salaam (as of October 2021)
 - [ResilienceAcademy](https://resilienceacademy.ac.tz/data/) is a project that uses digital tools and open source data to address climate-related risks and vulnerabilities in urban areas. The [Climate Risk Database](https://geonode.resilienceacademy.ac.tz/) is a geospatial data repository for disaster research and management.
-    - **Dar es Salaam Waste Sites** points with poorly managed solid waste sites, mapped as part of the [Let's Do It World](https://letsdoitworld.org) cleanup project
+    - ```**Dar es Salaam Waste Sites**``` points with poorly managed solid waste sites, mapped as part of the [Let's Do It World](https://letsdoitworld.org) cleanup project
 
 ### Data limitations
 ```
@@ -58,7 +58,7 @@ I also reprojected both layers and the wards layer into the EPSG:32737 coordinat
 ```sql
 CREATE TABLE impervsurf
 AS
-SELECT osm_id, st_buffer(st_transform(way, 32737), 5)::geometry(multipolygon,32737) AS geom FROM impervroads
+SELECT osm_id, st_buffer(st_transform(way, 32737), 5)::geometry(multipolygon, 32737) AS geom FROM impervroads
 UNION
 SELECT osm_id, st_transform(way, 32737)::geometry(multipolygon,32737) AS geom FROM impervpoly;
 
@@ -71,9 +71,9 @@ I intersected the impervious surface layer with the wards layer in order to assi
 ```sql
 CREATE TABLE impervsurf_withward
 AS
-SELECT impervsurf2.osm_id, st_multi(st_intersection(impervsurf2.geom, wards_repro.geom))::geometry(multipolygon, 32737) AS geom, wards_repro.ward_name
+SELECT impervsurf.osm_id, st_multi(st_intersection(impervsurf.geom, wards_repro.geom))::geometry(multipolygon, 32737) AS geom, wards_repro.ward_name
 FROM impervsurf2 INNER JOIN wards_repro
-ON st_intersects(impervsurf2.geom, wards_repro.geom);
+ON st_intersects(impervsurf.geom, wards_repro.geom);
 
 CREATE TABLE impervsurf_byward
 AS
