@@ -2,7 +2,7 @@
 layout: page
 title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
-
+# Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 #### October 2021
 
 ![Results](assets/waste_imperv.png)
@@ -75,18 +75,37 @@ SELECT ward_name, st_union(impervsurf_withward.geom)::geometry(multipolygon, 327
 FROM impervsurf_withward
 GROUP BY ward_name;
 ```
+I then selected all waste sites from the ResilienceAcademy's ```Dar es Salaam Waste Sites``` layer, and reprojected them to match the ward geometry. Then, I intersected them with the ward layer to assign ward information to each waste site point. Then I grouped the waste sites by ward, counting the total for each ward.
 
-### Data analysis
-I calculated
 ```sql
-/* calculate total area of impervious surfaces by ward */
+CREATE TABLE waste_repro
+AS
+SELECT waste.waste_site, waste.clean_up_m, st_transform(waste.geom, 32737)::geometry(point, 32737) AS geom FROM waste;
+
+CREATE TABLE waste_withward
+AS
+SELECT wards_repro.ward_name, waste_repro.waste_site, waste_repro.clean_up_m, st_multi(waste_repro.geom)::geometry(multipoint, 32737) AS geom, wards_repro
+FROM waste_repro INNER JOIN wards_repro
+ON st_intersects(waste_repro.geom, wards_repro.geom);
+
+CREATE TABLE waste_byward
+AS
+SELECT ward_name, st_multi(st_union(waste_withward.geom))::geometry(multipoint, 32737) AS geom, count(ward_name)
+FROM waste_withward
+GROUP BY ward_name;
+```
+### Data analysis
+To determine wards' proportion of impervious surfaces and waste site densities, I joined those totals to the original ward geometry to compare them to each wards' area.
+
+First, I calculated total area of impervious surfaces by ward, and joined that information back to the original ward geometry to determine the proportion of impervious surface in each ward.
+
+```sql
 ALTER TABLE impervsurf_byward
 ADD COLUMN impervarea int;
 
 UPDATE impervsurf_byward
 SET impervarea = st_area(geom);
 
-/* join impervious surface data back to original ward geometry */
 ALTER TABLE wards_repro
 ADD COLUMN impervarea int;
 
@@ -95,34 +114,15 @@ SET impervarea = impervsurf_byward.impervarea
 FROM impervsurf_byward
 WHERE impervsurf_byward.ward_name = wards_repro.ward_name;
 
-/* calculate proportion of impervious surface area by ward */
 ALTER TABLE wards_repro
 ADD COLUMN propimperv real;
 
 UPDATE wards_repro
 SET propimperv = impervarea / st_area(geom)::real;
+```
+Then, I joined the waste site counts back to the original ward geometry and calculated the density of waste sites by ward area.
 
-/* PART (2) waste site density */
-/* select all waste sites, including name and info about cleanup method */
-CREATE TABLE waste_repro
-AS
-SELECT waste.waste_site, waste.clean_up_m, st_transform(waste.geom, 32737)::geometry(point, 32737) AS geom FROM waste;
-
-/* join waste sites data to wards geometry */
-CREATE TABLE waste_withward
-AS
-SELECT wards_repro.ward_name, waste_repro.waste_site, waste_repro.clean_up_m, st_multi(waste_repro.geom)::geometry(multipoint, 32737) AS geom, wards_repro
-FROM waste_repro INNER JOIN wards_repro
-ON st_intersects(waste_repro.geom, wards_repro.geom);
-
-/* aggregate geometries by wards, counting waste sites. st_multi() used to make geometry type match column type, which is multipoint in this case */
-CREATE TABLE waste_byward
-AS
-SELECT ward_name, st_multi(st_union(waste_withward.geom))::geometry(multipoint, 32737) AS geom, count(ward_name)
-FROM waste_withward
-GROUP BY ward_name;
-
-/* join waste site info back to original ward geometry */
+```sql
 ALTER TABLE wards_repro
 ADD COLUMN wastecount int;
 
@@ -131,14 +131,12 @@ SET wastecount = waste_byward.count
 FROM waste_byward
 WHERE waste_byward.ward_name = wards_repro.ward_name;
 
-/* calculate waste site density by ward */
 ALTER TABLE wards_repro
 ADD COLUMN waste_density real;
 
 UPDATE wards_repro
 SET waste_density = wastecount / st_area(geom)::real;
 ```
-### Analysis
 
 ## Results
 Click [here](assets/): to view the interactive map.
