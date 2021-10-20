@@ -11,55 +11,79 @@ title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 #### Open Source GIScience
 #### October 2021
 
-Here's [my map](assets/):
+![Results](assets/waste_imperv.png)
 
-and, here's the code!
+## Question/Abstract?
+This study uses densities of impervious surfaces and poorly managed solid waste sites throughout the wards of Dar es Salaam, Tanzania, to obtain information on pollution pathways during flood events.``` (more here)```
+
+### Keywords
+Dar es Salaam, impervious surfaces, waste, flood resilience
+
+## Methods
+This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location.
+
+### Data sources
+- [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203) is a global collaborative geographic database
+    - **planet_osm_roads** and **planet_osm_polygons** layers for impervious surface cover throughout Dar es Salaam (as of October 2021)
+- [ResilienceAcademy](https://resilienceacademy.ac.tz/data/) is a project that uses digital tools and open source data to address climate-related risks and vulnerabilities in urban areas. The [Climate Risk Database](https://geonode.resilienceacademy.ac.tz/) is a geospatial data repository for disaster research and management.
+    - **Dar es Salaam Waste Sites** points with poorly managed solid waste sites, mapped as part of the [Let's Do It World](https://letsdoitworld.org) cleanup project
+
+### Data limitations
+```
+Impervious surfaces are open source data mapped by thousands of contributors, and therefore cannot be considered exhaustive.
+impervious surfaces are not consistent throughout wards. A visual comparison with satellite imagery suggests that most primary roads are not included in planet_osm_roads.
+
+Additionally, the majority of OSM data points were created in ___, suggesting ___.
+```
+### Data preparation
+First, I defined impervious surfaces as areas where water can't infiltrate the ground. In the context of Dar es Salaam's OpenStreetMap data, that meant having a paved or asphalt surface, or being a building. I identified all impervious roads (polylines) and polygons in the database.
 
 ```sql
-/* PART (1) impervious surface density */
-/* select all paved roads from OSM roads data */
 CREATE TABLE impervroads
 AS
 SELECT osm_id, way
 FROM planet_osm_roads
 WHERE surface = 'paved' OR surface = 'asphalt';
 
-/* select all paved surfaces and buildings from OSM polygon data */
 CREATE TABLE impervpoly
 AS
 SELECT osm_id
 FROM planet_osm_polygon
 WHERE surface = 'paved' OR surface = 'asphalt' OR building = 'yes';
+```
+In order to combine the two above queries into one with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m was a reasonable buffer based on a visual inspection of roads via satellite imagery.
 
-/* combine roads and polygons, while also buffering roads and reprojecting both */
-/* 10m (5m buffer both directions) was determined as a reasonable size for a road based on visual inspection via satellite imagery */
+I also reprojected both layers and the wards layer into the EPSG:32737 coordinate reference system and typecast them as multipolygons.
+
+```sql
 CREATE TABLE impervsurf
 AS
 SELECT osm_id, st_buffer(st_transform(way, 32737), 5)::geometry(multipolygon,32737) AS geom FROM impervroads
 UNION
 SELECT osm_id, st_transform(way, 32737)::geometry(multipolygon,32737) AS geom FROM impervpoly;
 
-/* reproject wards shapefile to 32737 to make it compatible with impervsurf */
 CREATE TABLE wards_repro
 AS
 SELECT wards.id, wards.ward_name, wards.totalpop, st_transform(geom, 32737)::geometry(multipolygon, 32737) AS geom FROM wards;
+```
+I intersected the impervious surface layer with the wards layer in order to assign ward information to each impervious feature. I aggregated the impervious surfaces by ward, creating a multipart feature with all impervious surfaces for each ward.
 
-/* join impervious surface data to wards geometry using st_intersects */
-/* (inner join to make sure theyre all inside ward boundaries) */
-/* st_multi() used to make geometry type match column type, which is multipolygon in this case */
+```sql
 CREATE TABLE impervsurf_withward
 AS
 SELECT impervsurf2.osm_id, st_multi(st_intersection(impervsurf2.geom, wards_repro.geom))::geometry(multipolygon, 32737) AS geom, wards_repro.ward_name
 FROM impervsurf2 INNER JOIN wards_repro
 ON st_intersects(impervsurf2.geom, wards_repro.geom);
 
-/* aggregate (dissolve) geometries by ward, creating a multipart feature for each ward */
 CREATE TABLE impervsurf_byward
 AS
 SELECT ward_name, st_union(impervsurf_withward.geom)::geometry(multipolygon, 32737) AS geom
 FROM impervsurf_withward
 GROUP BY ward_name;
+```
 
+
+```sql
 /* calculate total area of impervious surfaces by ward */
 ALTER TABLE impervsurf_byward
 ADD COLUMN impervarea int;
@@ -119,3 +143,12 @@ ADD COLUMN waste_density real;
 UPDATE wards_repro
 SET waste_density = wastecount / st_area(geom)::real;
 ```
+### Analysis
+
+## Results
+Click [here](assets/): to view the interactive map.
+
+
+## Discussion
+
+## Conclusion
