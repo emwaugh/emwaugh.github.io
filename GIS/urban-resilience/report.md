@@ -139,7 +139,108 @@ SET waste_density = wastecount / st_area(geom)::real;
 ```
 
 ## Results
-Click [here](assets/): to view the interactive map.
+Click [here](assets/) to view the interactive map.
+This study revealed that
+
+Ward | Waste Sites Per sqkm	|Impervious Surface Cover (% Area)
+Magomeni|	180.3|	5
+Manzese|	170.9	|4
+Hananasifu	|156.2|	4
+Tandale	|152.8	|4
+Mchikichini|	147.3	|7
+Jangwani|	138.8	|13
+Buguruni|	129.7|	5
+Mburahati|	114.1	|2
+Makurumla|	103.5	|5
+Makumbusho|	103.1	|6
+Tabata|	102.7|	5
+Kigogo|	100.3	|6
+Sinza|	92.9|	7
+Mzimuni	|87.0|	6
+Sandali	|85.9|	23
+Mwananyamala|	81.9|	6
+Mabibo|	63.5	|5
+Vingunguti|	61.1|	5
+Ukonga	|53.5	|17
+Makuburi|	46.7|	13
+Kariakoo|	43.5|	11
+Kinondoni	|41.6|	8
+Liwiti|	32.2|	28
+Ilala	|29.7	|8
+Kimanga|	29.3|	29
+Temeke|	29.1|	6
+Kijitonyama	|28.6	|11
+Kawe	|27.5|	5
+Upanga Mashariki	|23.6	|6
+Kimara	|23.5	|17
+Ubungo	|22.6	|3
+Msasani|	21.3	|6
+Saranga	|18.5|	14
+Msigani	|18.2	|12
+Upanga Magharibi|	17.4|	3
+Kinyerezi|	16.6	|10
+Gongolamboto|	15.1|	11
+Bonyokwa|	11.6|	9
+Pugu	|11.3	|11
+Segerea	|11.2|	20
+Kipawa	|10.9|	12
+Ndugumbi|	10.7|	5
+Tandika	|10.0|	1
+Buza	|9.0	|19
+Makongo	|7.8	|7
+Mikocheni|	7.4	|9
+Kisukuru	|6.6	|16
+Kwembe	|5.0	|5
+Mnyamani|	4.9	|6
+Mbezi	|4.4	|8
+Kunduchi|	3.8	|11
+Kigamboni	|2.9	|13
+Charambe|	2.7	|28
+Kilakala|	1.3|	36
+Pugu Station|	1.1	|9
+Kiwalani|	0.9	|34
+Mianzini|	0.7	|26
+Kivukoni|	0.4|	8
+Goba|	0.1	|7
+Wazo|	0.0	|9
+Majohe|	0.0	|10
+Azimio	|	33|
+Chang'ombe		|31|
+Kiburugwa	|	26|
+Yombo Vituka	|	24|
+Mtoni	|	22|
+Miburani	|	20|
+Chamazi	|	17|
+Kurasini	|	16|
+Mbezi Juu	|	16|
+Kivule	|	15|
+Kitunda		|14|
+Kijichi		|12|
+Vijibweni	|	11|
+Tungi	|	11|
+Keko	|	9|
+Toangoma	|	9|
+Bunju	|	9|
+Gerezani|		8|
+Kibamba	|	8|
+Mchafukoge	|	7|
+Mbweni	|	6|
+Mjimwema	|	6|
+Chanika	|	5|
+Kibada	|	5|
+Msongola	|	4|
+Mabwepande	|	4|
+Kisutu	|	3|
+Somangila		|2|
+Mbagala	|	2|
+Mbagala Kuu	|	2|
+Kimbiji	|	1|
+Makangarawe	|	1|
+Kisarawe II	|	1|
+Pemba Mnazi	|	0|
+
+
+
 
 
 ## Discussion
