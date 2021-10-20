@@ -7,8 +7,6 @@ title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 # Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ### Data from the [ResilienceAcademy](https://resilienceacademy.ac.tz/data/) and [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203)
 
-### Emma Waugh
-#### Open Source GIScience
 #### October 2021
 
 ![Results](assets/waste_imperv.png)
@@ -24,9 +22,9 @@ This study is an analysis of impervious surface cover and waste site management 
 
 ### Data sources
 - [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203) is a global collaborative geographic database
-    - ```**planet_osm_roads**``` and ```**planet_osm_polygons**``` layers for impervious surface cover throughout Dar es Salaam (as of October 2021)
+    - ```planet_osm_roads``` and ```planet_osm_polygons``` layers for impervious surface cover throughout Dar es Salaam (as of October 2021)
 - [ResilienceAcademy](https://resilienceacademy.ac.tz/data/) is a project that uses digital tools and open source data to address climate-related risks and vulnerabilities in urban areas. The [Climate Risk Database](https://geonode.resilienceacademy.ac.tz/) is a geospatial data repository for disaster research and management.
-    - ```**Dar es Salaam Waste Sites**``` points with poorly managed solid waste sites, mapped as part of the [Let's Do It World](https://letsdoitworld.org) cleanup project
+    - ```Dar es Salaam Waste Sites``` points with poorly managed solid waste sites, mapped as part of the [Let's Do It World](https://letsdoitworld.org) cleanup project
 
 ### Data limitations
 ```
