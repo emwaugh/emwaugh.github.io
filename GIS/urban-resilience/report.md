@@ -3,6 +3,7 @@ layout: page
 title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
 # Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
+#
 #### October 2021
 
 ![Results](assets/waste_map.png)
@@ -206,6 +207,7 @@ Majohe|	<0.1	|10
 Most wards with high waste site density (50-180 sites/sqkm) had relatively low impervious surface cover, while the lower range (0-50 sites/sqkm) have generally higher impervious surface cover. As the wards closer to Dar es Salaam's center tend to have more waste sites, it is unexpected that they would have fewer roads and buildings.
 
 The map below shows waste sites in orange, and indicates impervious surface cover by shade of purple. The waste sites appear to be concentrated in a few wards northwest from the center of the city.
+
 ![Results](assets/waste_map.png)
 
 It appears that the OpenStreetMap data is incomplete in the central wards, and this limitation is discussed below.
