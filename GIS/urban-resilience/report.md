@@ -2,11 +2,13 @@
 layout: page
 title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
+
+# Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 #### October 2021
 
 ![Results](assets/waste_map.png)
 
-## Question/Abstract?
+## Background
 The presence of impervious ground materials means lower infiltration rates and increased quantities of runoff during storm events. This results in the transport of pollutants in surface water, which may ultimately end up in aquatic ecosystems and drinking water sources.
 
 This study aims to characterize the risk for pollution transport during rain events via measurement of impervious surface cover and poorly managed solid waste sites throughout the wards of Dar es Salaam, Tanzania.
