@@ -206,7 +206,7 @@ Most wards with high waste site density (50-180 sites/sqkm) had relatively low i
 
 The map below shows waste sites in orange, and indicates impervious surface cover by shade of purple. The waste sites appear to be concentrated in a few wards northwest from the center of the city.
 
-[![Results](assets/waste_map.png)]
+![Results](GIS/urban-resilience/assets/waste_map.png)
 
 It appears that the OpenStreetMap data is incomplete in the central wards, and this limitation is discussed below.
 
