@@ -14,13 +14,13 @@ abstraction. It can be easy to misrepresent data or even mislead viewers through
 
 Accuracy will never be completely achieved, so representing those gaps is important. Geographers have a great responsibility to be responsible and
 thoughtful producers of knowledge, and to represent the inherent inaccuracies in their work. They must be transparent in their reporting of error,
-any and all decisions to manage or reduce or represent data. I think that in the literature, descriptions and justifications for those steps
+and any and all decisions to manage or reduce or represent data. I think that in the literature, descriptions and justifications for those steps
 would be a good way to relay those concerns and gaps to readers. In the spirit of open source, representing uncertainty and error throughout the
 research process is good practice anyway, and may push researchers to be accountable for misrepresentation of their work.
 
-[![Conceptual view of uncertainty](assets/uncertainty.png)](https://github.io)
+![Conceptual view of uncertainty](assets/uncertainty.png)
 *Image from Longley, et al. (2008).*
 
-### Reference:
+### Reference
 
 Longley, P. A., M. F. Goodchild, D. J. Maguire, and D. W. Rhind. 2008. Geographical information systems and science 2nd ed. Chichester: Wiley.

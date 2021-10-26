@@ -41,3 +41,9 @@ limitations would be more easily avoided in GIS compared to other sciences, howe
 In addition, decisions in organizing and cleaning data can play a big role in
 the results (NASEM 2019 Box 3.2), though well documented code should reflect
 that.
+
+### References
+
+NASEM. 2019. Reproducibility and Replicability in Science. Washington, D.C.: National Academies Press. DOI: 10.17226/25303
+
+Sui, D., and P. Kedron. 2021. Reproducibility and Replicability in the Context of the Contested Identities of Geography. Annals of the American Association of Geographers 111 (5):1275–1283. DOI:10.1080/24694452.2020.1806024.
