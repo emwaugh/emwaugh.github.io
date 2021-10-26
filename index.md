@@ -14,5 +14,6 @@ title: Emma Waugh
 1. [Reflections on GIS and Geography](reflections/reflections-gis-geography.md)
 2. [Reproducibility & Replicability in Open Source GIS](reflections/reproducibility-replicability-osgis.md)
 3. [Uncertainty in Geography](reflections/uncertainty-geography.md)
+4. [Learning Spatial Analysis Through Reproducible Research](reflections/learning-spatial-analysis-rr.md)
 
 [![GitHub Logo](assets/Octocat.png)](https://github.io)
