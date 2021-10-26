@@ -21,6 +21,6 @@ research process is good practice anyway, and may push researchers to be account
 [![Conceptual view of uncertainty](assets/uncertainty.png)](https://github.io)
 *Image from Longley, et al. (2008).*
 
-# Source:
+### Reference:
 
-Longley, P. A., M. F. Goodchild, D. J. Maguire, and D. W. Rhind. 2008. Geographical information systems and science 2nd ed. Chichester: Wiley. (only chapter 6: Uncertainty, pages 127-153)
+Longley, P. A., M. F. Goodchild, D. J. Maguire, and D. W. Rhind. 2008. Geographical information systems and science 2nd ed. Chichester: Wiley.

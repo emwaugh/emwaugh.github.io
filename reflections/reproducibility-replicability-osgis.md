@@ -20,7 +20,7 @@ how to incorporate the two together.
 
 Additionally, development of infrastructure in the form of software, guides, and
 reporting standards in organizations increase accountability within the field
-Sui & Kedron 2021). It also seems as if the open source GIS community is very
+(Sui & Kedron 2021). It also seems as if the open source GIS community is very
 engaged in each others' work, and is driving more collaboration and innovation
 in ways to address spatial problems.
 Are there other disciplines that are making such a coordinated effort to
