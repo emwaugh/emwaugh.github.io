@@ -8,6 +8,7 @@ title: Emma Waugh
 ## GIS
 
 1. [Urban Resilience in Dar es Salaam, Tanzania](GIS/urban-resilience/report.md)
+2. [Reanalysis of COVID-19 Healthcare Spatial Accessibility Model in Chicago, IL](GIS/covid-spatial-accessibility/report.md)
 
 ## Reflections
 
