@@ -10,7 +10,7 @@ The availability of geocoded tweets allows for tracking tweets around areas impa
 
 [![Sharpiegate](assets/sharpiegate.png)](https://www.nytimes.com/2019/09/06/us/politics/trump-alabama-dorian.html)
 
-While social media data can be an important source of information in the wake of a natural disaster, there are many nuances to its uses, users, and ___ that should inform the way we analyze and distribute it. Crawford and Finn (2014) write about the limits and challenges to using "crisis data" to respond to disasters. Disaster response and experience is constructed, is "unfolding over a long time, and ... popular definitions of disasters produce an 'emergency imaginary' that shapes disaster response." Crawford and Finn are critical of the ways perceptions of disaster are used and misused following natural disasters or humanitarian crises.
+While social media data can be an important source of information in the wake of a natural disaster, there are many nuances to its uses, users, and algorithm that should inform the way we analyze and distribute it. Crawford and Finn (2014) write about the limits and challenges to using "crisis data" to respond to disasters. Disaster response and experience is constructed, is "unfolding over a long time, and ... popular definitions of disasters produce an 'emergency imaginary' that shapes disaster response." Crawford and Finn are critical of the ways perceptions of disaster are used and misused following natural disasters or humanitarian crises.
 
 #### Uncertainty in Volunteered Geographic Information
 
