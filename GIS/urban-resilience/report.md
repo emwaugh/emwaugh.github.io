@@ -2,9 +2,7 @@
 layout: page
 title: Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
-
-# Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
-#### October 2021
+October 2021
 
 ![Results](assets/waste_map.png)
 
