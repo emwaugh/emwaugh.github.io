@@ -8,7 +8,7 @@ An [analyis of Twitter activity during Hurricane Dorian in 2019](https://github.
 
 The availability of geocoded tweets allows for tracking tweets around areas impacted by the storm. The analysis also sought to determine the impacts of former President Trump's addition of Alabama to NOAA's expected impacted area map, which came to be known as "Sharpiegate." The search terms "hurricane," "Dorian," and "sharpiegate" were used to find hurricane-related tweets during the time period.
 
-[![Sharpiegate](assets/sharpiegate.png)](https://www.nytimes.com/2019/09/06/us/politics/trump-alabama-dorian.html)
+[![Sharpiegate](./assets/sharpiegate.png)](https://www.nytimes.com/2019/09/06/us/politics/trump-alabama-dorian.html)
 
 While social media data can be an important source of information in the wake of a natural disaster, there are many nuances to its uses, users, and algorithm that should inform the way we analyze and distribute it. Crawford and Finn (2014) write about the limits and challenges to using "crisis data" to respond to disasters. Disaster response and experience is constructed, is "unfolding over a long time, and ... popular definitions of disasters produce an 'emergency imaginary' that shapes disaster response." Crawford and Finn are critical of the ways perceptions of disaster are used and misused following natural disasters or humanitarian crises.
 
