@@ -17,6 +17,6 @@ title: Emma Waugh
 3. [Uncertainty in Geography](reflections/uncertainty-geography.md)
 4. [Learning Spatial Analysis Through Reproducible Research](reflections/learning-spatial-analysis-rr.md)
 5. [Uncertainty in a Climate Vulnerability Analysis](reflections/uncertainty-climate-vulnerability.md)
-6. [Uncertainty and Ethics in Volunteered Geographic Information](uncertainty-ethics-vgi.md)
+6. [Uncertainty and Ethics in Volunteered Geographic Information](reflections/uncertainty-ethics-vgi.md)
 
 [![GitHub Logo](assets/Octocat.png)](https://github.io)
