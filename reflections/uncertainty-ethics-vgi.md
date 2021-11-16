@@ -21,7 +21,7 @@ Volunteered geographic information, such as geocoded tweets, inherently include 
 The use of volunteered geographic information also necessitates an ethical consideration; Crawford and Finn discuss questions of privacy, consent, and agency, some of which complicate the uncertainties named above. Many people are not aware that they are sharing information about their location. So-called "self-managed privacy" leaves room for people to unknowingly agree (or more often, to not actively disagree) to their location being shared. Privacy rights are often renegotiated in a disaster response, as personal locations are used for tracking and rescuing. However, sometimes these boundary adjustments are exploited, as when the Haiti Mission 4636 information was publicized without the agreement of the users (Crawford and Finn).
 
 Crawford and Finn also call into question the concept of disaster, as news and social media typically follow them when they are new and sensational (hours-days scale), but neglect to cover the long-term effects (years-decades scale) of these events. These timelines can promote short term attention and solutions to supposedly "isolated events", giving agency to the humanitarian organizations that intervene rather than the people affected by it.
-For example, a timeseries of Hurricane Dorian-related Twitter activity shows that activity tanked after a 2-day period (see below figure), even though displacement, damage, and devastation lasted far beyond that. 
+For example, a timeseries of Hurricane Dorian-related Twitter activity shows that activity tanked after a 2-day period (see below figure), even though displacement, damage, and devastation lasted far beyond that.
 
 ![Tweets over time](/assets/tweettime.png)
 
@@ -39,5 +39,5 @@ No identifying information was published, but patterns within the online discour
 
 ![Tweet word network](/assets/wordnetwork.png)
 
-## Reference
-Crawford, K., and M. Finn. 2014. The limits of crisis data: analytical and ethical challenges of using social and mobile data to understand disasters. *GeoJournal* 80 (4):491–502. [DOI:10.1007/s10708-014-9597-z](DOI:10.1007/s10708-014-9597-z).
+### Reference
+Crawford, K., and M. Finn. 2014. The limits of crisis data: analytical and ethical challenges of using social and mobile data to understand disasters. *GeoJournal* 80 (4):491–502. DOI: [10.1007/s10708-014-9597-z](10.1007/s10708-014-9597-z).
