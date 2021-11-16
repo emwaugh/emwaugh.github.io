@@ -14,8 +14,8 @@ We can also push our review further, and add a "reanalysis" (Kedron & Holler 202
 
 ### References
 
-Kang, J. Y., A. Michels, F. Lyu, Shaohua Wang, N. Agbodo, V. L. Freeman, and Shaowen Wang. 2020. Rapidly measuring spatial accessibility of COVID-19 healthcare resources: a case study of Illinois, USA. International Journal of Health Geographics 19 (1):1–17. DOI:10.1186/s12942-020-00229-x.
+Kang, J. Y., A. Michels, F. Lyu, Shaohua Wang, N. Agbodo, V. L. Freeman, and Shaowen Wang. 2020. Rapidly measuring spatial accessibility of COVID-19 healthcare resources: a case study of Illinois, USA. *International Journal of Health Geographics* 19 (1):1–17. DOI:[10.1186/s12942-020-00229-x](10.1186/s12942-020-00229-x).
 
 Kedron, P. & Holler, J. (2021, August 23). Working with Students to Reproduce COVID-19 Research to Establish the Credibility of Findings and Accelerate Policymaker Adoption. Geospatial Fellows Webinar Series, American Association of Geographers. [Access here](https://aag-geospatialfellows-series.secure-platform.com/a/solicitations/16/sessiongallery/250).
 
-Wang, S. (2019). Cyberinfrastructure. The Geographic Information Science & Technology Body of Knowledge (2nd Quarter 2019 Edition), John P. Wilson (Ed.). DOI:10.22224/gistbok/2019.2.4.
+Wang, S. (2019). Cyberinfrastructure. The Geographic Information Science & Technology Body of Knowledge (2nd Quarter 2019 Edition), John P. Wilson (Ed.). DOI:[10.22224/gistbok/2019.2.4](10.22224/gistbok/2019.2.4).

@@ -18,9 +18,9 @@ and any and all decisions to manage or reduce or represent data. I think that in
 would be a good way to relay those concerns and gaps to readers. In the spirit of open source, representing uncertainty and error throughout the
 research process is good practice anyway, and may push researchers to be accountable for misrepresentation of their work.
 
-![Conceptual view of uncertainty](assets/uncertainty.png)
+![Conceptual view of uncertainty](/assets/uncertainty.png)
 *Image from Longley, et al. (2008).*
 
 ### Reference
 
-Longley, P. A., M. F. Goodchild, D. J. Maguire, and D. W. Rhind. 2008. Geographical information systems and science 2nd ed. Chichester: Wiley.
+Longley, P. A., M. F. Goodchild, D. J. Maguire, and D. W. Rhind. 2008. *Geographical information systems and science* 2nd ed. Chichester: Wiley.

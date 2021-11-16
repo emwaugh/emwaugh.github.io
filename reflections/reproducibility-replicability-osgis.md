@@ -44,6 +44,6 @@ that.
 
 ### References
 
-NASEM. 2019. Reproducibility and Replicability in Science. Washington, D.C.: National Academies Press. DOI: 10.17226/25303
+NASEM. 2019. Reproducibility and Replicability in Science. Washington, D.C.: National Academies Press. DOI:[10.17226/25303](10.17226/25303)
 
-Sui, D., and P. Kedron. 2021. Reproducibility and Replicability in the Context of the Contested Identities of Geography. Annals of the American Association of Geographers 111 (5):1275–1283. DOI:10.1080/24694452.2020.1806024.
+Sui, D., and P. Kedron. 2021. Reproducibility and Replicability in the Context of the Contested Identities of Geography. *Annals of the American Association of Geographers* 111 (5):1275–1283. DOI:[10.1080/24694452.2020.1806024](10.1080/24694452.2020.1806024).
