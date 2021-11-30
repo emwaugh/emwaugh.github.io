@@ -39,19 +39,19 @@ In addition to editing the code from Holler's Hurricane Dorian analysis, I added
 ## Results and Discussion
 
 The word network shows mostly expected pairings: "climate change", "stay safe", and "category 4" are among the most frequently paired words. Some pairs of Twitter usernames (i.e. @littleelvis40 and @rockthesetweets) suggest prolonged discussions tagging those users. There are no political implications in this (see [this blog post](https://emwaugh.github.io/reflections/uncertainty-ethics-vgi.html) for a discussion of the word network during Hurricane Dorian), though there has been [some discussion of the political decisions that resulted in the New York City Metropolitan Transit Authority's inability to respond to  floods in the subway system](https://phys.org/news/2021-09-experts-hurricane-ida-deadly-york.html).
-![Word network](assets/word_pairs.png)
+![Word network](/assets/word_pairs.png)
 
 The retweet and quote tweet network highlights  Twitter users that are retweeted and quote tweeted frequently. In this case, the National Weather Service in New Orleans (@NWSNewOrleans) and the National Hurricane Center (@NHC_Atlantic) are among the most-retweeted, along with journalists, other news station accounts, local governments, and government agencies. Wang et al. described a strong influence of news stations on information propagation during disasters, and the same can be seen in this case.
-![Retweet network](assets/retweet_network.png)
+![Retweet network](/assets/retweet_network.png)
 
 A map of the Normalized Difference Twitter Index shows that overall, activity was highest around the Louisiana coast (where Ida first made landfall and impacts were severe) and in areas of the northeast, where heavy rains led to dangerous floods).
-![NDTI](assets/ndti_ida.png)
+![NDTI](/assets/ndti_ida.png)
 
 A map of activity clusters based on Getis-Ord G* scores similarly show that hurricane-related Twitter activity peaked in the northern Gulf Coast and the northern East Coast, where the storms impacts were most severe.
-![Clusters](assets/hotspots.png)
+![Clusters](/assets/hotspots.png)
 
 However, when Twitter activity is separated into August 29-31 (when Ida made landfall in Louisiana plus the following days) and September 1-3 (when heavy rains began in the northeast plus the following days), the clusters separate. It becomes apparent that the southeast was still feeling the impacts, which makes sense given that [90% of power customers in coastal Louisiana were still without power by September 3](https://www.nytimes.com/interactive/2021/us/hurricane-ida-tracker.html). The increase in "low" clusters later in the week could be explained by areas that escaped impacts and therefore ceased to tweet about the storm.
-![Clusters by date](assets/hotspots_bydate.png)
+![Clusters by date](/assets/hotspots_bydate.png)
 
 ## Conclusions
 The replication of the Hurricane Dorian analysis (which was in turn a replication of Wang et al.'s wildfire study) provides an opportunity for comparison between these natural disasters and how social media is used to produce knowledge during them, as well as prepare and respond to disasters.
