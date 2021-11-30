@@ -2,8 +2,7 @@
 layout: page
 title: Reanalysis of Kang et al. 2020's COVID-19 Healthcare Spatial Accessibility Model
 ---
-# Reanalysis of Kang et al. 2020's COVID-19 Healthcare Spatial Accessibility Model
-#### October 31, 2021
+October 31, 2021
 
 ### Keywords
 reproducible, COVID-19, healthcare resources, spatial accessibility, Illinois
