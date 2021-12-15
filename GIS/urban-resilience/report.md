@@ -15,7 +15,7 @@ This study aims to characterize the risk for pollution transport during rain eve
 Dar es Salaam, impervious surfaces, waste, flood resilience
 
 ## Methods
-This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location.
+This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location. The GitHub repository for this study is available [*here*](github.com/emwaugh/resilience-waste). 
 
 ### Data sources
 - [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203) is a global collaborative geographic database
