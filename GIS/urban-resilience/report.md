@@ -4,7 +4,7 @@ title: "Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
 October 2021
 
-![Results](assets/waste_map.png)
+[![Results](assets/waste_map.png)](assets/)
 
 ## Background
 The presence of impervious ground materials means lower infiltration rates and increased quantities of runoff during storm events. This results in the transport of pollutants in surface water, which may ultimately end up in aquatic ecosystems and drinking water sources.
@@ -15,7 +15,7 @@ This study aims to characterize the risk for pollution transport during rain eve
 Dar es Salaam, impervious surfaces, waste, flood resilience
 
 ## Methods
-This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location. The GitHub repository for this study is available [*here*](github.com/emwaugh/resilience-waste). 
+This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location. The GitHub repository for this study is available [**here**](github.com/emwaugh/resilience-waste). 
 
 ### Data sources
 - [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203) is a global collaborative geographic database
@@ -133,7 +133,8 @@ SET waste_density = wastecount / st_area(geom)::real;
 ```
 
 ## Results
-Click [here](assets/) to view the interactive web map of my results.
+[![Results](assets/waste_map.png)](assets/)
+Click the map to navigate the interactive web map of this study!
 
 While this study produced information on waste site density and impervious surfaces that could inform ward-level waste management and flood resilience practices in Dar es Salaam, it also revealed the limitations in using OSM data for such an analysis.
 
@@ -205,8 +206,6 @@ Majohe|	<0.1	|10
 Most wards with high waste site density (50-180 sites/sqkm) had relatively low impervious surface cover, while the lower range (0-50 sites/sqkm) have generally higher impervious surface cover. As the wards closer to Dar es Salaam's center tend to have more waste sites, it is unexpected that they would have fewer roads and buildings.
 
 The map below shows waste sites in orange, and indicates impervious surface cover by shade of purple. The waste sites appear to be concentrated in a few wards northwest from the center of the city.
-
-![Results](assets/waste_map.png)
 
 It appears that the OpenStreetMap data is incomplete in the central wards, and this limitation is discussed below.
 
