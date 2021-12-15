@@ -4,7 +4,7 @@ title: "Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
 October 2021
 
-[![Results](assets/waste_map.png)](assets/)
+[![Results](assets/waste_map.png)](GIS/urban-resilience/assets/)
 
 ## Background
 The presence of impervious ground materials means lower infiltration rates and increased quantities of runoff during storm events. This results in the transport of pollutants in surface water, which may ultimately end up in aquatic ecosystems and drinking water sources.
@@ -133,7 +133,7 @@ SET waste_density = wastecount / st_area(geom)::real;
 ```
 
 ## Results
-[![Results](assets/waste_map.png)](assets/)
+[![Results](assets/waste_map.png)](GIS/urban-resilience/assets/)
 Click the map to navigate the interactive web map of this study!
 
 While this study produced information on waste site density and impervious surfaces that could inform ward-level waste management and flood resilience practices in Dar es Salaam, it also revealed the limitations in using OSM data for such an analysis.
