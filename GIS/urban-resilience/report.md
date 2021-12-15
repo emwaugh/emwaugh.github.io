@@ -39,7 +39,7 @@ SELECT osm_id
 FROM planet_osm_polygon
 WHERE surface = 'paved' OR surface = 'asphalt' OR building = 'yes';
 ```
-In order to combine the two above queries into one with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m was a reasonable buffer based on a visual inspection of roads via satellite imagery.
+In order to combine the two above queries into one with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m (in each direction) was a reasonable buffer based on measurement of paved roads via satellite imagery.
 
 I also reprojected both layers and the wards layer into the EPSG:32737 coordinate reference system and typecast them as multipolygons.
 
@@ -54,22 +54,8 @@ CREATE TABLE wards_repro
 AS
 SELECT wards.id, wards.ward_name, wards.totalpop, st_transform(geom, 32737)::geometry(multipolygon, 32737) AS geom FROM wards;
 ```
-I intersected the impervious surface layer with the wards layer in order to assign ward information to each impervious feature. I aggregated the impervious surfaces by ward, creating a multipart feature with all impervious surfaces for each ward.
 
-```sql
-CREATE TABLE impervsurf_withward
-AS
-SELECT impervsurf.osm_id, st_multi(st_intersection(impervsurf.geom, wards_repro.geom))::geometry(multipolygon, 32737) AS geom, wards_repro.ward_name
-FROM impervsurf2 INNER JOIN wards_repro
-ON st_intersects(impervsurf.geom, wards_repro.geom);
-
-CREATE TABLE impervsurf_byward
-AS
-SELECT ward_name, st_union(impervsurf_withward.geom)::geometry(multipolygon, 32737) AS geom
-FROM impervsurf_withward
-GROUP BY ward_name;
-```
-I then selected all waste sites from the ResilienceAcademy's ```Dar es Salaam Waste Sites``` layer, and reprojected them to match the ward geometry. Then, I intersected them with the ward layer to assign ward information to each waste site point. Then I grouped the waste sites by ward, counting the total for each ward.
+I then selected all waste sites from the ResilienceAcademy's `Dar es Salaam Waste Sites` layer, and reprojected them to match the ward geometry. Then, I intersected them with the ward layer to assign ward information to each waste site point. Then I grouped the waste sites by ward, counting the total for each ward.
 
 ```sql
 CREATE TABLE waste_repro
@@ -89,6 +75,22 @@ FROM waste_withward
 GROUP BY ward_name;
 ```
 ### Data analysis
+
+I intersected the impervious surface layer with the wards layer in order to assign ward information to each impervious feature. I aggregated the impervious surfaces by ward, creating a multipart feature with all impervious surfaces for each ward.
+
+```sql
+CREATE TABLE impervsurf_withward
+AS
+SELECT impervsurf.osm_id, st_multi(st_intersection(impervsurf.geom, wards_repro.geom))::geometry(multipolygon, 32737) AS geom, wards_repro.ward_name
+FROM impervsurf2 INNER JOIN wards_repro
+ON st_intersects(impervsurf.geom, wards_repro.geom);
+
+CREATE TABLE impervsurf_byward
+AS
+SELECT ward_name, st_union(impervsurf_withward.geom)::geometry(multipolygon, 32737) AS geom
+FROM impervsurf_withward
+GROUP BY ward_name;
+```
 To determine wards' proportion of impervious surfaces and waste site densities, I joined those totals to the original ward geometry to compare them to each wards' area.
 
 First, I calculated total area of impervious surfaces by ward, and joined that information back to the original ward geometry to determine the proportion of impervious surface in each ward.
