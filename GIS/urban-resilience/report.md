@@ -163,7 +163,7 @@ Mchikichini	|148|	25
 
 Most wards with high waste site density (50-180 sites/sqkm) also had relatively high impervious surface cover (20-51%), while the lower range (0-50 sites/sqkm)  ranged 0-40% impervious cover. The more urban wards closer to Dar es Salaam's center tend to have both higher impervious surface area and more waste sites.
 
-The map below shows waste sites in orange, and indicates impervious surface cover by shade of purple. The waste sites appear to be concentrated in the wards northwest from the center of the city.
+The map above shows waste sites in orange, and indicates impervious surface cover by shade of purple. The waste sites appear to be concentrated in the wards northwest from the center of the city.
 
 ### Data limitations
 
