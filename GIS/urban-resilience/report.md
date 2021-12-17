@@ -4,7 +4,7 @@ title: "Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam
 ---
 October 2021
 
-![Results](assets/waste_map.png)
+[![Results](assets/waste_map.png)](assets/)
 
 ## Background
 The presence of impervious ground materials, including paved or hardpacked roads and paths as well as buildings, means lower infiltration rates and increased quantities of runoff during storm events. This results in the transport of pollutants in surface water, which may ultimately end up in aquatic ecosystems and drinking water sources.
@@ -15,7 +15,7 @@ This study aims to characterize the risk for pollutant transport during rain eve
 Dar es Salaam, impervious surfaces, waste, flood resilience
 
 ## Methods
-This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location.
+This study is an analysis of impervious surface cover and waste site management across 95 wards in Dar es Salaam, Tanzania, to determine wards with higher risk of surface water contamination during flood events. All analysis is on the ward scale, with impervious surface cover and waste sites aggregated by ward location. The GitHub repository for this study is available [**here**](github.com/emwaugh/resilience-waste).
 
 ### Data sources
 - [OpenStreetMap](https://www.openstreetmap.org/#map=12/-6.8162/39.2203) is a global collaborative geographic database
@@ -39,7 +39,7 @@ SELECT osm_id
 FROM planet_osm_polygon
 WHERE surface = 'paved' OR surface = 'asphalt' OR building IS NOT NULL;
 ```
-In order to combine the two above queries into one shapefile with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m was a reasonable buffer based on a visual inspection of roads via satellite imagery.
+In order to combine the two above queries into one with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m (in each direction) was a reasonable buffer based on measurement of paved roads via satellite imagery.
 
 I also reprojected both layers and the wards layer into the EPSG:32737 coordinate reference system and typecast them as multipolygons.
 
@@ -67,13 +67,7 @@ SELECT impervsurf.osm_id, st_multi(st_intersection(impervsurf.geom, wards_repro.
 FROM impervsurf2 INNER JOIN wards_repro
 ON st_intersects(impervsurf.geom, wards_repro.geom);
 
-CREATE TABLE impervsurf_byward
-AS
-SELECT ward_name, st_union(impervsurf_withward.geom)::geometry(multipolygon, 32737) AS geom
-FROM impervsurf_withward
-GROUP BY ward_name;
-```
-I then selected all waste sites from the ResilienceAcademy's ```Dar es Salaam Waste Sites``` layer, and reprojected them to match the ward geometry. Then, I intersected them with the ward layer to assign ward information to each waste site point. Then I grouped the waste sites by ward, counting the total for each ward.
+I then selected all waste sites from the ResilienceAcademy `Dar es Salaam Waste Sites` layer, and reprojected them to match the ward geometry. Then, I intersected them with the ward layer to assign ward information to each waste site point. Then I grouped the waste sites by ward, counting the total for each ward.
 
 ```sql
 CREATE TABLE waste_repro
@@ -152,7 +146,8 @@ SET waste_dens_km = waste_density * 1000000::real;
 ```
 
 ## Results
-Click [here](assets/) to view the interactive web map of my results.
+[![Results](assets/waste_map.png)](GIS/urban-resilience/assets/)
+Click the map to navigate the interactive web map of this study!
 
 While this study produced information on waste site density and impervious surfaces that could inform ward-level waste management and flood resilience practices in Dar es Salaam, it also revealed the limitations in using OSM data for such an analysis.
 
@@ -232,8 +227,6 @@ Majohe|	<0.1	|10
 Most wards with high waste site density (50-180 sites/sqkm) had relatively low impervious surface cover, while the lower range (0-50 sites/sqkm) have generally higher impervious surface cover. As the wards closer to Dar es Salaam's center tend to have more waste sites, it is unexpected that they would have fewer roads and buildings.
 
 The map below shows waste sites in orange, and indicates impervious surface cover by shade of purple. The waste sites appear to be concentrated in a few wards northwest from the center of the city.
-
-![Results](assets/waste_map.png)
 
 It appears that the OpenStreetMap data is incomplete in the central wards, and this limitation is discussed below.
 
