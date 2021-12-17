@@ -7,9 +7,9 @@ October 2021
 ![Results](assets/waste_map.png)
 
 ## Background
-The presence of impervious ground materials means lower infiltration rates and increased quantities of runoff during storm events. This results in the transport of pollutants in surface water, which may ultimately end up in aquatic ecosystems and drinking water sources.
+The presence of impervious ground materials, including paved or hardpacked roads and paths as well as buildings, means lower infiltration rates and increased quantities of runoff during storm events. This results in the transport of pollutants in surface water, which may ultimately end up in aquatic ecosystems and drinking water sources.
 
-This study aims to characterize the risk for pollution transport during rain events via measurement of impervious surface cover and poorly managed solid waste sites throughout the wards of Dar es Salaam, Tanzania.
+This study aims to characterize the risk for pollutant transport during rain events via measurement of impervious surface cover and poorly managed solid waste sites throughout the wards of Dar es Salaam, Tanzania.
 
 ### Keywords
 Dar es Salaam, impervious surfaces, waste, flood resilience
@@ -37,9 +37,9 @@ CREATE TABLE impervpoly
 AS
 SELECT osm_id
 FROM planet_osm_polygon
-WHERE surface = 'paved' OR surface = 'asphalt' OR building = 'yes';
+WHERE surface = 'paved' OR surface = 'asphalt' OR building IS NOT NULL;
 ```
-In order to combine the two above queries into one with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m was a reasonable buffer based on a visual inspection of roads via satellite imagery.
+In order to combine the two above queries into one shapefile with all impervious surfaces, I first buffered the road polylines to make them into polygons. I determined that 5m was a reasonable buffer based on a visual inspection of roads via satellite imagery.
 
 I also reprojected both layers and the wards layer into the EPSG:32737 coordinate reference system and typecast them as multipolygons.
 
@@ -54,7 +54,11 @@ CREATE TABLE wards_repro
 AS
 SELECT wards.id, wards.ward_name, wards.totalpop, st_transform(geom, 32737)::geometry(multipolygon, 32737) AS geom FROM wards;
 ```
+
+### Data analysis
 I intersected the impervious surface layer with the wards layer in order to assign ward information to each impervious feature. I aggregated the impervious surfaces by ward, creating a multipart feature with all impervious surfaces for each ward.
+
+Note: `st_collect` can also be used to group geometries by ward. `st_union` is more computationally-intensive, but ensures that overlapping building or road features are accounted for.
 
 ```sql
 CREATE TABLE impervsurf_withward
@@ -88,7 +92,6 @@ SELECT ward_name, st_multi(st_union(waste_withward.geom))::geometry(multipoint, 
 FROM waste_withward
 GROUP BY ward_name;
 ```
-### Data analysis
 To determine wards' proportion of impervious surfaces and waste site densities, I joined those totals to the original ward geometry to compare them to each wards' area.
 
 First, I calculated total area of impervious surfaces by ward, and joined that information back to the original ward geometry to determine the proportion of impervious surface in each ward.
@@ -113,8 +116,15 @@ ADD COLUMN propimperv real;
 
 UPDATE wards_repro
 SET propimperv = impervarea / st_area(geom)::real;
+
+ALTER TABLE wards_repro
+ADD COLUMN pct_imperv real;
+
+UPDATE wards_repro
+SET pct_imperv = propimperv * 100::real;
 ```
-Then, I joined the waste site counts back to the original ward geometry and calculated the density of waste sites by ward area.
+Then, I joined the waste site counts back to the original ward geometry.
+To normalize the number of waste sites by ward area, I calculated density by dividing total sites by ward area.
 
 ```sql
 ALTER TABLE wards_repro
@@ -131,6 +141,15 @@ ADD COLUMN waste_density real;
 UPDATE wards_repro
 SET waste_density = wastecount / st_area(geom)::real;
 ```
+I convert to the density unit from per square meter to per square kilometer to make it more intuitive.  
+
+```sql
+ALTER TABLE wards_repro
+ADD COLUMN waste_dens_km real;
+
+UPDATE wards_repro
+SET waste_dens_km = waste_density * 1000000::real;
+```
 
 ## Results
 Click [here](assets/) to view the interactive web map of my results.
@@ -138,6 +157,14 @@ Click [here](assets/) to view the interactive web map of my results.
 While this study produced information on waste site density and impervious surfaces that could inform ward-level waste management and flood resilience practices in Dar es Salaam, it also revealed the limitations in using OSM data for such an analysis.
 
 The table below contains wards and accompanying waste site densities and impervious surface cover for the 61 wards that contained waste site data (of 95 total). Wards are listed in order of high to low waste density. Within those, impervious surface cover ranges widely from 2-36%. Therefore, this information is best interpreted on an individual ward level.
+
+**Ward** | **Waste sites per sqkm** | **Impervious surface cover (% area)**
+Magomeni	|180|	30
+Manzese	171|	47
+Hananasifu	|156.211	|30
+Tandale|	153|	51
+Mchikichini	|148|	25
+
 
 Ward | Waste sites per sqkm	|Impervious surface cover (% area)
 Magomeni |	180.3 |	5
@@ -212,6 +239,6 @@ It appears that the OpenStreetMap data is incomplete in the central wards, and t
 
 ### Data limitations
 
-Impervious surfaces are open source data mapped by thousands of contributors, and therefore cannot be considered exhaustive. In this study, it appears that impervious surfaces are not consistent throughout wards. A visual comparison with satellite imagery of Dar es Salaam suggests that most primary roads are not included in `planet_osm_roads`, and that the wards near the center of Dar es Salaam are less intensively mapped. (It does appear that the majority of OpenStreetMap listings for both `planet_osm_roads` and `planet_osm_polygon` were created or edited in the last 3 and 6 years, respectively, meaning they are likely not outdated. However, there are relatively few features in `planet_osm_roads` (1,700) compared to `planet_osm_polygon` (1.3 million) and `planet_osm_lines` (134,000). It may have been more effective to filter line features for roads instead of using the seemingly less-created roads layer.)
+Impervious surfaces are open source data mapped by thousands of contributors, and therefore cannot be considered exhaustive. In this study, it appears that impervious surfaces are not consistent throughout wards. A visual comparison with satellite imagery of Dar es Salaam suggests that many primary roads are not included in `planet_osm_roads`, and that the wards near the center of Dar es Salaam are less intensively mapped. (It does appear that the majority of OpenStreetMap listings for both `planet_osm_roads` and `planet_osm_polygon` were created or edited in the last 3 and 6 years, respectively, meaning they are likely not outdated. However, there are relatively few features in `planet_osm_roads` (1,700) compared to `planet_osm_polygon` (1.3 million) and `planet_osm_lines` (134,000). It may have been more effective to filter line features for roads instead of using the seemingly less-created roads layer.)
 
-Finally, the road buffer of 5m (total 10m width) was based on a visual inspection of roads in satellite imagery, and is a reasonable width for primary roads. However, those primary roads are not differentiated from secondary roads and may therefore overestimate road surfaces. Since overall impervious surface appears to be underestimated in this context, I don't think road buffers impacted the results of this analysis.
+Finally, the road buffer of 5m (total 10m width) was based on a visual inspection and measurement of roads in satellite imagery, and is a reasonable width for primary paved roads. However, those primary roads are not differentiated from secondary roads and may therefore overestimate road surfaces. Unpaved but hardpacked surfaces, such as on footpaths and dirt roads, are similarly impervious to paved roads, but were not included in this analysis. Since overall impervious surface appears to be underestimated in this context, I don't think road buffers impacted the results of this analysis.
