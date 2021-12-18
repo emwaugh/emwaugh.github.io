@@ -3,9 +3,9 @@ layout: page
 title: Using MODISTools to Study Land Cover Change in San Diego County
 ---
 
-Emma Waugh, Middlebury College 
+Emma Waugh, Middlebury College
 
-Version 1.0 | Created 2021-12-15 | Last Updated **2021-12-18**
+Version 1.0 | Created 2021-12-15 | Last Updated 2021-12-18
 
 ## Abstract
 
