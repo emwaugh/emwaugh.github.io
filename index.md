@@ -3,6 +3,9 @@ layout: default
 title: Emma Waugh
 ---
 
+#### Hi! My name is Emma⁠—
+and I'm a senior studying geology, food systems, and environmental studies at Middlebury College. This page serves as a portfolio of all the work⁠ I've done in [GEOG 323: Open Source GIScience](https://gis4dev.github.io/).
+
 ### My Work
 
 #### GIS Analyses
