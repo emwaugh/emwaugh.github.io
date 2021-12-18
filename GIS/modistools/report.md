@@ -20,7 +20,7 @@ MODIS, MODISTools, wildfire, California, leaf area index, land cover
 ### Background
 
 Leaf area index is defined as the ratio of one-sided green leaf area to unit ground area (deciduous vegetation) or half the needle surface area to unit ground area (coniferous vegetation)(EarthData). Unlike the Normalized Difference Vegetation Index (NDVI), LAI is a quantitative measurement of how much vegetation is present, so it is commonly used as an indicator for evaporation/transpiration, rainfall, water resource use, and crop health (Zheng & Moskal 2009). Monitoring LAI over the long term can show the impacts of climate change, land use change, wildfires, and more on vegetated areas.
-
+ 
 In southern California, increasing temperatures and less predictable precipitation in recent decades, as well as increasing wildfire prevalence in the region, have contributed to changes in vegetation cover type—primarily a decrease in overall vegetation cover (Potter 2019). This study aims to quantify those changes using Moderate Resolution Imaging Spectroradiometer (MODIS) satellite imagery over a 17-year period.
 
 ## Study design
