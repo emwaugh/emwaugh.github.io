@@ -2,7 +2,11 @@
 layout: page
 title: "Twitter Spatial Analysis of Hurricane Ida"
 ---
-November 2021
+Emma Waugh, Middlebury College
+
+Version 1.0 | Created 2021-11-29 | Last Updated 2021-12-19
+
+The reproducible research compendium for this study is located [here](https://github.com/emwaugh/RPl-Dorian).
 
 ## Introduction
 Twitter data can be used to gain real-time information on natural disasters, such as wildfires and storms. Wang et al. (2016) used geocoded tweets with the words "wildfire" or "fire" in order to understand wildfire impacts over space and time. They show that the so-called "human-centric sensing technology" found in social media can provide useful information about both natural disasters and the discourse surrounding them, both of which are useful for understanding and preparing disaster response.
@@ -18,8 +22,9 @@ See [this blog post](https://emwaugh.github.io/reflections/uncertainty-ethics-vg
 ## Methods
 In this replication, the search terms "hurricane" and "Ida" were used, as well as a 1000-mile radius around the coordinates 36, -87. Three separate queries were made: on September 2, 5, and 10, due to the extended impacts of the storm system. Additionally, since the storm made landfall in Louisiana on August 29, 2021 and then moved towards the northeastern U.S. by September 1-2, I divided part of the spatial analysis into August 29-31 and September 1-3, with code inspired by my classmate [Liam Smith's code](https://github.com/Liam-W-Smith/Dorian-Replication).
 
+![Temporal trend](tweet_time.png)
 
-A query for baseline Twitter activity was also made at the same time and region, in order to normalize and understand hurricane-specific activity. **[Click here]()** to view the script for this analysis.
+Another classmate, [Castin Stone](https://stonecastin.github.io/), ran a query for baseline Twitter activity made at the same time and region, in order to normalize and understand hurricane-specific activity. Click [here](https://github.com/emwaugh/RPl-Dorian/blob/main/procedure/code/01-dorian.Rmd) to view the script for this analysis.
 
 ### Textual Analysis
 The text in the tweets was processed to remove plain language. The network analysis was accomplished using the `rtweet` network_graph function and `igraph`. Word freqency was plotted, alongside a word cloud for visualization (from the `wordcloud` package). A word association network graph was created using `tidytext` and `ggraph`.
@@ -51,7 +56,10 @@ A map of activity clusters based on Getis-Ord G* scores similarly show that hurr
 ![Clusters](/assets/hotspots.png)
 
 However, when Twitter activity is separated into August 29-31 (when Ida made landfall in Louisiana plus the following days) and September 1-3 (when heavy rains began in the northeast plus the following days), the clusters separate. It becomes apparent that the southeast was still feeling the impacts, which makes sense given that [90% of power customers in coastal Louisiana were still without power by September 3](https://www.nytimes.com/interactive/2021/us/hurricane-ida-tracker.html). The increase in "low" clusters later in the week could be explained by areas that escaped impacts and therefore ceased to tweet about the storm.
-![Clusters by date](/assets/hotspots_bydate.png)
+
+![Clusters August 29-31](/assets/hotspots_aug29_31.png)
+
+![Clusters September 1-3](/assets/hotspots_sep01_03.png)
 
 ## Conclusions
 The replication of the Hurricane Dorian analysis (which was in turn a replication of Wang et al.'s wildfire study) provides an opportunity for comparison between these natural disasters and how social media is used to produce knowledge during them, as well as prepare and respond to disasters.
