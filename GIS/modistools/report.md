@@ -7,11 +7,11 @@ Emma Waugh, Middlebury College
 
 Version 1.0 | Created 2021-12-15 | Last Updated 2021-12-18
 
+The reproducible research compendium for this study is located [here](https://github.com/emwaugh/RPl-MODISTools).
+
 ## Abstract
 
 This study replicates a vignette for an R package called MODISTools, which is designed for easily downloading MODIS timeseries directly into an R workspace. This replication seeks to analyze change in leaf area index (LAI), as an indicator of vegetation change or loss in southern California resulting from wildfires. Because MODISTools is designed for small study areas, I focus on a 20 x 20km area in San Diego County, from 2003 to 2021. I find that there is overall little change in vegetation cover throughout the time period in this area, though the small study area may not reflect broader trends in vegetation cover in southern California.
-
-The reproducible research compendium for this study is located [here](https://github.com/emwaugh/RPl-MODISTools).
 
 ### Keywords
 
@@ -20,7 +20,7 @@ MODIS, MODISTools, wildfire, California, leaf area index, land cover
 ### Background
 
 Leaf area index is defined as the ratio of one-sided green leaf area to unit ground area (deciduous vegetation) or half the needle surface area to unit ground area (coniferous vegetation)(EarthData). Unlike the Normalized Difference Vegetation Index (NDVI), LAI is a quantitative measurement of how much vegetation is present, so it is commonly used as an indicator for evaporation/transpiration, rainfall, water resource use, and crop health (Zheng & Moskal 2009). Monitoring LAI over the long term can show the impacts of climate change, land use change, wildfires, and more on vegetated areas.
- 
+
 In southern California, increasing temperatures and less predictable precipitation in recent decades, as well as increasing wildfire prevalence in the region, have contributed to changes in vegetation cover type—primarily a decrease in overall vegetation cover (Potter 2019). This study aims to quantify those changes using Moderate Resolution Imaging Spectroradiometer (MODIS) satellite imagery over a 17-year period.
 
 ## Study design

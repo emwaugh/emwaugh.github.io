@@ -2,7 +2,12 @@
 layout: page
 title: "Pollution Pathways: Waste Sites and Impervious Surfaces in Dar es Salaam"
 ---
-October 2021
+
+Emma Waugh, Middlebury College
+
+Version 1.0 | Created 2021-10-14 | Last Updated 2021-12-17
+
+The reproducible research compendium for this study is located [here](https://github.com/emwaugh/urban-resilience).
 
 [![Results](assets/waste_map.png)](assets/)
 
