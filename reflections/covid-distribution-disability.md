@@ -4,9 +4,9 @@ title: Reproduction of COVID-19 Distribution and Disability in the US
 ---
 December 2021
 
-This is a reproduction of Chakraborty (2021), first implemented by oseph Holler, Drew An Pham, Derrick Burt, and Peter Kedron in July 2021. GEOG 323: Open Source GIScience reproduced it again in Fall 2021.
+This is a reproduction of Chakraborty (2021), first implemented by Joseph Holler, Drew An Pham, Derrick Burt, and Peter Kedron in July 2021. GEOG 323: Open Source GIScience reproduced it again in Fall 2021.
 
-My version of the reproduction, based on the above, is linked [here](https://github.com/emwaugh/RPr-Chakraborty-2021). 
+My version of the reproduction, based on the above, is linked [here](https://github.com/emwaugh/RPr-Chakraborty-2021).
 
 #### Background
 
@@ -22,7 +22,6 @@ First, Chakraborty completed bivariate Pearson product-moment correlations, in w
 
 Generalized estimating equations (GEEs) allowed an analysis of spatial patterns within disability subgroups and COVID-19 in a non-normal and spatially clustered data distribution. Clusters of counties were defined using two methods. First, counties were clustered by state, as states generally oversee similar policies such as mask mandates and testing availability, as well as socio-cultural response to those policies. Then, he accounted for intra-state disparities and interstate patterns by using SatScan software to determine spatial clusters with the Poisson model. Then relative risk, which is `(local cases / local population) / (total - local cases / total - local population)` was estimated for each cluster. Chakraborty applied a score of 1-6 to each county, with 1 as lowest relative risk and 6 as highest relative risk. Five GEEs were modeled, one for each subgroup. The results of the GEEs were similar; positive associations with COVID-19 incidence were found within white, Hispanic and non-Hispanic non-white, below poverty, age 5-17 years, and female groups.
 
-
 #### Our Results
 
 First, we reproduced Chakraborty's U.S. map of COVID-19 incidence (cases per 100,000). (The August 1, 2020 COVID-19 data used in the original study is no longer available via Johns Hopkins, so it is provided within the research compendium.)
@@ -33,7 +32,7 @@ We also created a map of disability rates in U.S. counties. This allows for a in
 
 ![Disability rates in U.S. counties](/assets/disabilityrates.png)
 
-We then calculated Pearson's R correlation coefficients for each of the subgroups, and found identical direction and significance to Chakraborty's results, though a difference in magnitude. Pearson's correlation assumes a normal distribution, a characteristic this data does not have, so we calculated Spearman's rho, a non-parametric correlation test, as well. This test had different directions and magnitudes for some groups; for instance, the disabled Native American and female subgroups switched from positive to negative correlation with COVID-19 incidence.
+We then calculated Pearson's R correlation coefficients for each of the subgroups, and found identical direction and significance to Chakraborty's results, though a difference in magnitude. Pearson's correlation assumes a normal distribution, a characteristic this data does not have, so we calculated Spearman's rho, a non-parametric correlation test, as well. This test had different directions and magnitudes for some groups; for instance, the disabled Native American and female subgroups switched from positive to negative correlation with COVID-19 incidence (see table below for our results).
 
 | Variable (Percent with Disability)                   | Pearson's R           | Spearman's rho         |
 | -------------------------- | ----------- | ----------- |
