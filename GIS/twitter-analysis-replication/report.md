@@ -70,6 +70,6 @@ However, the trends in online responses could help in determining which areas ne
 
 ## References
 
-Crawford, K., & Finn, M. (2015). The limits of crisis data: Analytical and ethical challenges of using social and mobile data to understand disasters. GeoJournal, 80(4), 491–502. DOI:[https://doi.org/10.1007/s10708-014-9597-z](10.1007/s11069-016-2329-6).
+Crawford, K., & Finn, M. (2015). The limits of crisis data: Analytical and ethical challenges of using social and mobile data to understand disasters. GeoJournal, 80(4), 491–502. DOI: [10.1007/s10708-014-9597-z](https://doi.org/10.1007/s10708-014-9597-z).
 
-Wang, Z., X. Ye, and M. H. Tsou. 2016. Spatial, temporal, and content analysis of Twitter for wildfire hazards. Natural Hazards 83 (1):523–540. DOI:[10.1007/s11069-016-2329-6](10.1007/s11069-016-2329-6).
+Wang, Z., X. Ye, and M. H. Tsou. 2016. Spatial, temporal, and content analysis of Twitter for wildfire hazards. Natural Hazards 83 (1):523–540. DOI: [10.1007/s11069-016-2329-6](https://doi.org/10.1007/s11069-016-2329-6).
