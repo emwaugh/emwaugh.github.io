@@ -4,14 +4,15 @@ title: Uncertainty in Geography
 ---
 October 4, 2021
 
-In my GIS coursework and work experiences, I don't think I've learned much about how to deal with or represent uncertainty in geography. When using geographic data, so many choices are made by researchers about how to structure their questions, where to obtain data, how to measure and analyze data, and how to present their results, and all of these have a great impact on how uncertainty propagates throughout the work, and therefore throughout spheres of knowledge. 
+In my GIS coursework and work experiences, I don't think I've learned much about how to deal with or represent uncertainty in geography. When using geographic data, so many choices are made by researchers about how to structure their questions, where to obtain data, how to measure and analyze data, and how to present their results, and all of these have a great impact on how uncertainty propagates throughout the work, and therefore throughout spheres of knowledge.
 
 ![Conceptual view of uncertainty](/assets/uncertainty.png)
+
 *Image from Longley, et al. (2008).*
 
 #### Positionality and Construct Validity
 
-In class we've talked about positionality, where different life experiences and social positions shape perceptions and reality, even in "objective" sciences. To me that seems like an important part of uncertainties in conception of geographic phenomena: where even the base understandings of truths and place and politics can play a role in the questions that are asked, or not asked. How can researchers be better held accountable for understanding their positionality, and to design studies where the validity of their questions is checked? 
+In class we've talked about positionality, where different life experiences and social positions shape perceptions and reality, even in "objective" sciences. To me that seems like an important part of uncertainties in conception of geographic phenomena: where even the base understandings of truths and place and politics can play a role in the questions that are asked, or not asked. How can researchers be better held accountable for understanding their positionality, and to design studies where the validity of their questions is checked?
 
 #### Inaccuracy in Measurement and Representation
 
